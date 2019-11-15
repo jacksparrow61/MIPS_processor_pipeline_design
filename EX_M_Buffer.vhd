@@ -1,0 +1,34 @@
+-- EX/Mem Buffer
+
+library ieee;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+
+entity EX_M_Buffer is 
+generic (width: integer:=31);
+  port(
+    clk: in std_logic:='0';
+    RegWriteE, MemtoRegE, MemWriteE: in std_logic:='0';
+    EDBin1,EDBin2: in std_logic_vector(31 downto 0) :=  (others =>'0'); 
+    WBAin: in std_logic_vector(4 downto 0) :=  (others =>'0');
+    RegWriteM, MemtoRegM, MemWriteM: out std_logic:='0';
+    EDBout1,EDBout2: out std_logic_vector(31 downto 0) :=  (others =>'0');
+    WBAout: out std_logic_vector(4 downto 0) :=  (others =>'0')
+    );
+end EX_M_Buffer;
+
+architecture EX_M_a of EX_M_Buffer is
+  begin
+    process(clk)
+      begin
+      if(falling_edge(clk)) then
+      RegWriteM <= RegWriteE;
+      MemtoRegM <= MemtoRegE;
+      MemWriteM <= MemWriteE;
+      EDBout1   <= EDBin1;
+      EDBout2   <= EDBin2;
+      WBAout    <= WBAin;
+    end if;
+  end process; 
+end EX_M_a;

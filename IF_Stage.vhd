@@ -1,0 +1,72 @@
+--libraries
+-- IF Stage
+library ieee;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity IF_Stage is
+  port
+  (
+    clk: in std_logic:='0';
+    en1,en2: in std_logic :='1';
+    PCSrc_D: in std_logic :='0';
+    PCBra_D: in std_logic_vector(31 downto 0) :=(others =>'0');
+    
+    inst_out, PCplus4: out std_logic_vector(31 downto 0):=(others =>'0')
+    );
+end IF_Stage;
+
+architecture IF_stage_arc of IF_Stage is
+    -- IF stage MUX
+    component MUX_IF_Stage
+      port 
+      (
+        Mux_sel : in std_logic :='0';
+        PCplus4, Bra_PC : in std_logic_vector(31 downto 0) :=(others=>'0');
+        Mux_out : out std_logic_vector(31 downto 0) :=(others=>'0')
+        );
+    end component;
+    -- IF stage Program Counter
+    component PC
+      port
+      (
+        clk : in std_logic;
+        en : in std_logic :='1';
+        PC_in : in std_logic_vector(31 downto 0) :=(others=>'0');
+        PC_out : out std_logic_vector(31 downto 0) :=(others=>'X');
+        PCplus4 : out std_logic_vector(31 downto 0) :=(others=>'X')
+        );
+    end component;
+    -- Instruction memory
+    component Ins_mem
+      port
+      (
+        PC : in std_logic_vector(31 downto 0);
+        -- 32 bit instruction hardcoded in memory
+        Ins_out : out std_logic_vector(31 downto 0)
+        );
+    end component;
+    -- IF/ID Buffer
+    component IF_ID_Buffer
+    port
+    (
+      clk: in std_logic;
+      en: in std_logic :='1';
+      clr: in std_logic :='0';
+      IR_in : in std_logic_vector(31 downto 0); --instruction register
+      PC_in : in std_logic_vector(31 downto 0); -- PC input to IR
+      
+      Buffer_out : out std_logic_vector(31 downto 0);--Buffer output
+      PC_out : out std_logic_vector(31 downto 0)-- output from the buffer
+      );  
+     end component;
+       
+    signal mux_to_pc,pc_to_ins,adder_to_mux,ins_to_buffer: std_logic_vector(31 downto 0);
+        
+  begin
+    MUX     : MUX_IF_Stage port map(PCSrc_D,adder_to_mux,PCBra_D,mux_to_PC);
+    ProgCtr : PC port map(clk,en1,mux_to_PC,PC_to_ins,adder_to_mux);
+    Insmem  : Ins_mem port map(pc_to_ins,ins_to_buffer);
+    Buf     : IF_ID_Buffer port map(clk,en2,PCSrc_D, ins_to_buffer,adder_to_mux,inst_out,PCplus4);
+end IF_stage_arc;
+      

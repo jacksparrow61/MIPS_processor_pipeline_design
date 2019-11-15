@@ -1,0 +1,93 @@
+-- CONTROL UNIT FOR DECODE STAGE
+--libraries
+library ieee;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity controlunit is 
+  port(
+      clk: in std_logic;
+      opcode, funct: in std_logic_vector(5 downto 0):=(others=>'0');
+      RegWriteD,MemtoRegD, MemWriteD, ALUsrcD, RegDstD, BraD: out std_logic:='0';
+      ALUcontrolID: out std_logic_vector(2 downto 0):=(others=>'0')
+    );
+end controlunit;
+
+architecture control_arc of controlunit is
+  signal ALUop: std_logic_vector (1 downto 0);
+  signal op : std_logic_vector (5 downto 0);
+  
+  begin
+    op<=opcode;
+    process(clk)
+      begin
+        if(rising_edge(clk)) then
+        case op is
+        when "000000" =>--R type instruction
+          ALUop    <=  "10";
+          ALUsrcD  <=  '0';
+          RegDstD  <=  '1';
+          RegWriteD<=  '1';
+          MemtoRegD<=  '0';
+          MemWriteD<=  '0';
+          BraD     <=  '0';
+          
+        when "001000" =>--I type instruction, ADDI
+          ALUcontrolID   <=  "010";
+          ALUsrcD  <=  '1';
+          RegDstD  <=  '0';
+          RegWriteD<=  '1';
+          MemtoRegD<=  '0';
+          MemWriteD<=  '0';
+          BraD     <=  '0';
+          
+        when "001100" =>--I type instruction, SUBI
+          ALUcontrolID   <=  "110";
+          ALUsrcD  <=  '1';
+          RegDstD  <=  '0';
+          RegWriteD<=  '1';
+          MemtoRegD<=  '0';
+          MemWriteD<=  '0';
+          BraD     <=  '0';
+          
+        when "100011" =>--load instruction
+          ALUcontrolID   <=  "010";
+          ALUsrcD  <=  '1';
+          RegDstD  <=  '0';
+          RegWriteD<=  '1';
+          MemtoRegD<=  '1';
+          MemWriteD<=  '0';
+          BraD     <=  '0';
+          
+        when "101011" =>--store instruction
+          ALUcontrolID    <=  "010";
+          ALUsrcD  <=  '1';
+          RegDstD  <=  'X';
+          RegWriteD<=  '0';
+          MemtoRegD<=  'X';
+          MemWriteD<=  '1';
+          BraD     <=  '0';
+          
+        when "000100" =>--branch instruction
+          ALUop    <=  "01";
+          ALUsrcD  <=  '0';
+          RegDstD  <=  'X';
+          RegWriteD<=  '0';
+          MemtoRegD<=  'X';
+          MemWriteD<=  '0';
+          BraD     <=  '1';
+        end case;
+        
+        --decoding
+        if    ALUop="00" then ALUcontrolID<="010"; -- add
+        elsif ALUop="01" then ALUcontrolID<="110"; -- sub
+        elsif ALUop="10" and funct<="100000" then  ALUcontrolID<="010"; -- add
+        elsif ALUop="10" and funct<="100010" then  ALUcontrolID<="110"; -- sub
+        elsif ALUop="10" and funct<="100100" then  ALUcontrolID<="000"; -- and
+        elsif ALUop="10" and funct<="100101" then  ALUcontrolID<="001"; -- or
+        end if;
+      end if;
+    end process;
+  end control_arc;
+          
+          

@@ -1,0 +1,19 @@
+-- 2 input mux of execute stage
+library ieee;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity Mux2 is
+  port(
+  s: in std_logic:= '0';
+  i1,i2: in std_logic_vector(31 downto 0) := (others=>'0');
+  o: out std_logic_vector(31 downto 0) := (others=>'0')
+);
+end Mux2;
+
+architecture M2_a of Mux2 is 
+begin
+  o <= i1 when s = '0' else
+       i2 when s = '1' else
+       (others=>'0');
+end M2_a;

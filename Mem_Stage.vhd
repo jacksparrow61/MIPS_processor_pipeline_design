@@ -1,0 +1,44 @@
+--Memory Access Stage 
+library ieee;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity Mem_Stage is
+  port(
+    clk: in std_logic :='0';
+     RegWriteM, MemtoRegM, MemWriteM: in std_logic:='0';
+     ALUoutM, WriteDataM : in std_logic_vector(31 downto 0);
+     WBAin : in std_logic_vector(4 downto 0) := (others=>'0');
+     RegWriteW, MemtoRegW: out std_logic :='0';
+     DWBo1, DWBo2: out std_logic_vector(31 downto 0):= (others=>'0');
+     WBAout : out std_logic_vector(4 downto 0) := (others=>'0')
+  );
+end Mem_stage;
+
+architecture Mstage_a of Mem_Stage is
+-- mem access stage has data memory and mem/WB buffer
+component DataMem is
+  port(
+    clk, WriteData: in std_logic:='0';
+    DataMemAddIn, DataMemDataIn: in std_logic_vector(31 downto 0);
+    DataMemOut: out std_logic_vector(31 downto 0)
+  );
+end component;
+
+component M_WB_Buffer is
+  port(
+    clk: in std_logic;
+    RegWriteM, MemtoRegM: in std_logic:='0';
+    DWBin1, DWBin2: in std_logic_vector(31 downto 0):= (others=>'0');
+    WBAin : in std_logic_vector(4 downto 0) := (others=>'0');
+    RegWriteW, MemtoRegW: out std_logic :='0';
+    DWBo1, DWBo2: out std_logic_vector(31 downto 0):= (others=>'0');
+    WBAout : out std_logic_vector(4 downto 0) := (others=>'0')
+  );
+end component;
+signal mem2buf : std_logic_vector(31 downto 0);
+begin
+  m   :  DataMem     port map(clk,MemWriteM, ALUoutM, WriteDataM, mem2buf );
+  buf :  M_WB_Buffer port map(clk,RegWriteM, MemtoRegM, mem2buf,ALUoutM, WBAin, RegWriteW, MemtoRegW, DWBo1, DWBo2, WBAout );
+  
+end Mstage_a;

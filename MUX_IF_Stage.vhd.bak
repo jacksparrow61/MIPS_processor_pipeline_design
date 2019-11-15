@@ -1,0 +1,18 @@
+-- MUX in IF Stage
+--libraries
+library ieee;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity MUX_IF_Stage is
+  port
+  (
+    clk: in std_logic:='0';
+    en1,en2: in std_logic :='1';
+    PCSrc_D: in std_logic :='0';
+    PCBra_D: in std_logic_vector(31 downto 0) :=(others =>'0');
+    
+    inst_out, PCplus4: out std_logic_vector(31 downto 0):=(others =>'0')
+    );
+end MUX_IF_Stage;
+

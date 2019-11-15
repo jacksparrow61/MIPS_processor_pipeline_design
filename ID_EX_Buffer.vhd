@@ -1,0 +1,50 @@
+library ieee;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity ID_EX_Buffer is 
+  generic (width: integer:=31);
+
+  port(
+    clk,flush: in std_logic:='0';
+    
+    RegWrireD,MemtoRegD, MemWriteD, ALUsrcD, RegDstD: in std_logic:='0';
+    ALUcontrolID : in std_logic_vector(2 downto 0) := (others=>'0');
+    ReadReg1, ReadReg2, WriteReg: in  std_logic_vector(4 downto 0) := (others=>'0');
+    IEBin1,IEBin2, SignImD: in std_logic_vector(width downto 0) := (others=>'0');
+    
+    RegWriteE,MemtoRegE, MemWriteE, ALUsrcE, RegDstE : out std_logic:='0';
+    ALUcontrolE: out std_logic_vector(2 downto 0) := (others=>'0');
+    RsE,RtE,RdE: out std_logic_vector(4 downto 0) := (others=>'0');
+    IEBout1, IEBout2, SignImE: out std_logic_vector(width downto 0) := (others=>'0')
+  );
+end ID_EX_Buffer;
+
+
+architecture ID_EX_Buffer_a of ID_EX_Buffer is 
+signal temp : std_logic_vector(31 downto 0) := (others=>'0');
+begin
+  process(clk)
+    begin
+      if(falling_edge(clk)) then
+      if(flush ='0') then
+      
+      RegWriteE   <=  RegWrireD;
+      MemtoRegE   <=  MemtoRegD;
+      MemWriteE   <=  MemWriteD;
+      ALUsrcE     <=  ALUsrcD;
+      RegDstE     <=  RegDstD;
+      ALUcontrolE <=  ALUcontrolID;
+      
+      RsE <=  ReadReg1;
+      RtE <=  ReadReg2;
+      RdE <=  WriteReg;
+      
+      IEBout1 <=  IEBin1;
+      IEBout2 <=  IEBin2;
+      SignImE <=  SignImD;
+    end if;
+  end if;
+end process; 
+
+end ID_EX_Buffer_a;

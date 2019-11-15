@@ -1,0 +1,84 @@
+-- Hazard unit for MIPS 32
+
+library ieee;
+use IEEE.std_logic_1164.all;
+--use IEEE.numeric_std.all;
+use IEEE.std_logic_arith.all;
+use IEEE.std_logic_unsigned.all;
+
+entity Hazardunit is 
+  generic(
+    mux_s: integer:=1;
+    address: integer:=4
+  );
+  
+  port(
+    clk: in std_logic;
+    --address from various stages
+    WriteRegW, WriteRegM, WriteRegE: in std_logic_vector( address downto 0):= (others=>'0');
+    RsD, RtD, RsE, RtE, RdE: in std_logic_vector( address downto 0):= (others=>'0');
+    --select lines for muxes in EX stage
+    AE,BE: out std_logic_vector( mux_s downto 0):= (others=>'0');
+    --select lines for muxes in ID stage
+    AD, BD: out std_logic:='0';
+    
+    --in presence LOAD instruction
+    RegWriteM, RegWriteW, RegWriteE, MemtoRegM, MemtoRegE : in std_logic:='0';
+    
+    --stall control signals
+    ID_Stall, IF_Stall : out std_logic:='1';
+    
+    flush: out std_logic:='0';
+    BraD: in std_logic:='0'
+    );
+end Hazardunit;
+
+
+
+architecture hazard_a of HazardUnit is
+begin
+  process(clk)
+    begin
+      --HAZARD 1: DATA HAZARD
+      --solution: data forwarding
+      --if destination and source address are same ,
+      --adjust the mux signal to read the RIGHT data as input
+      if(RegWriteW ='1') then
+        if(unsigned(WriteRegW) = unsigned(RsE)) then
+          AE <="01"; else
+          AE <="00"; 
+        end if;
+        if(unsigned(WriteRegW) = unsigned(RtE)) then
+          BE <="01"; else
+          BE <="00"; 
+        end if;
+	  end if;
+	  
+      
+      if (RegWriteE ='1') then
+        if(unsigned(RdE)=unsigned(RsD)) then
+          AE <="10"; else
+          AE <="00";
+        end if;
+        
+        if(unsigned(RdE)=unsigned(RtD)) then
+          BE <="10"; else
+          BE <="00";
+        end if;
+      end if;
+      --HAZARD 2: Load delay
+      --STALL solution
+      -- if a load is followed by an instruction which uses
+      -- load's destination as its source then STALL by one cycle
+      
+      if(unsigned(RtE)=unsigned(RsD)) or (unsigned(RtE)=unsigned(RtD)) then
+        if(MemtoRegE ='1') then
+          IF_Stall <= '0';
+          flush    <= '1';
+        end if; else
+          ID_Stall  <= '1';
+          IF_Stall  <= '1';
+          flush     <= '0';
+      end if;
+    end process;
+end hazard_a;

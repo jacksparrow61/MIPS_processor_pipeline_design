@@ -1,0 +1,236 @@
+{F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/controlunit.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/controlunit.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity controlunit
+-- Compiling architecture control_arc of controlunit
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/DataMem.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/DataMem.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity DataMem
+-- Compiling architecture mem of DataMem
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/HazardUnit.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/HazardUnit.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Hazardunit
+-- Compiling architecture hazard_a of HazardUnit
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/EX_M_Buffer.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/EX_M_Buffer.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity EX_M_Buffer
+-- Compiling architecture EX_M_a of EX_M_Buffer
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/MUX_IDstage.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/MUX_IDstage.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity MUX_IDStage
+-- Compiling architecture MUX_IDStage_arc of MUX_IDStage
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/ALU.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/ALU.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ALU
+-- Compiling architecture ALU_a of ALU
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/ID_EX_Buffer.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/ID_EX_Buffer.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ID_EX_Buffer
+-- Compiling architecture ID_EX_Buffer_a of ID_EX_Buffer
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/IF_Stage.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/IF_Stage.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity IF_Stage
+-- Compiling architecture IF_stage_arc of IF_Stage
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/Rfile.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/Rfile.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Rfile
+-- Compiling architecture Rfile_arc of Rfile
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/MUX_IF_Stage.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/MUX_IF_Stage.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity MUX_IF_Stage
+-- Compiling architecture Mux_IF_arc of MUX_IF_Stage
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/IF_ID_Buffer.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/IF_ID_Buffer.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity IF_ID_Buffer
+-- Compiling architecture IF_ID_Buffer_arc of IF_ID_Buffer
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/MIPS32_testbench.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/MIPS32_testbench.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity MIPS32_tb
+-- Compiling architecture arc of MIPS32_tb
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/MIPS32.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/MIPS32.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity MIPS32
+-- Compiling architecture MIPS32_arc of MIPS32
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/BranchDetect.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/BranchDetect.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity BranchDetect
+-- Compiling architecture BD_a of BranchDetect
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/Mem_Stage.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/Mem_Stage.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Mem_Stage
+-- Compiling architecture Mstage_a of Mem_Stage
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/SignExt.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/SignExt.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity SignExt
+-- Compiling architecture SignExt_a of SignExt
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/PC.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/PC.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity PC
+-- Compiling architecture PC_arc of PC
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/Mux2.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/Mux2.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Mux2
+-- Compiling architecture M2_a of Mux2
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/MuxR.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/MuxR.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity MuxR
+-- Compiling architecture MRa of MuxR
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/WB_stage.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/WB_stage.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity WB_Stage
+-- Compiling architecture WB_Stage_a of WB_Stage
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/adderID.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/adderID.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity adderID
+-- Compiling architecture adderID_a of adderID
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/Mux3.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/Mux3.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Mux3
+-- Compiling architecture M3_a of Mux3
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/MUX_writeback.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/MUX_writeback.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity MuxWB
+-- Compiling architecture MuxWB_a of MuxWB
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/M_WB_Buffer.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/M_WB_Buffer.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity M_WB_Buffer
+-- Compiling architecture a of M_WB_Buffer
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/EX_Stage.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/EX_Stage.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity EX_Stage
+-- Compiling architecture EX_a of EX_Stage
+
+} {} {}} {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/ID_Stage.vhd} {1 {vcom -work work -2002 -explicit -vopt {F:/Dropbox/UC/Winter 2016/COEN 6741 - Comp Architecture and Desing/Project/Project/MIPS32/ID_Stage.vhd}
+Model Technology ModelSim SE-64 vcom 10.0c Compiler 2011.07 Jul 21 2011
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ID_Stage
+-- Compiling architecture ID_Stage_arc of ID_Stage
+
+} {} {}}
